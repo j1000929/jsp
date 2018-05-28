@@ -12,6 +12,46 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	body {
+		font-family: "돋움", "굴림";
+	}
+	
+	h1 {
+		text-align: center;
+	}
+	
+	table {
+		width: 800px;
+		margin: 0 auto;
+	}
+	
+	table, tr, th, td {
+		border: 1px solid black;
+	}
+	
+	tr {
+		height: 40px;
+	}
+	
+	.id {
+		width: 150px;
+		text-align: center;
+	}
+	
+	.email {
+		width: 250px;
+	}
+	
+	.tel {
+		width: 200px;
+		text-align: center;
+	}
+	
+	.hobby {
+		width: 200px;
+	}
+</style>
 </head>
 <body>
 <!--  1. MEMBER 태이블에서 모든 회원정보를 조회 -->
@@ -36,7 +76,7 @@
 						MemberBean mbean = vec.get(i);	
 			%>
 			<tr>
-				<td><%=mbean.getId() %></td>
+				<td><a href="A06MemberUpdateForm.jsp?id=<%=mbean.getId() %>"><%=mbean.getId() %></a></td>
 				<td><%=mbean.getEmail()%></td>
 				<td><%=mbean.getTel() %></td>
 				<td><%=mbean.getHobby() %></td>

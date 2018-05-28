@@ -108,4 +108,90 @@ public class MemberDAO {
 		}
 		return vec;
 	}
+	
+
+
+
+public MemberBean selectMember(String id) {
+	
+	MemberBean bean = new MemberBean();
+	try {
+	
+		getCon();
+		System.out.println(id);
+		String sql = "select * from member where id=?";
+		ps = con.prepareStatement(sql);
+		
+		ps.setString(1, id);//안됨.
+		
+		rs = ps.executeQuery();
+	
+		if(rs.next()) {
+			
+			bean.setId(rs.getString("id"));
+			bean.setEmail(rs.getString("email"));
+			bean.setTel(rs.getString("Tel"));
+			bean.setHobby(rs.getString("hobby"));
+			bean.setJob(rs.getString("Job"));
+			bean.setAge(rs.getString("age"));
+			bean.setInfo(rs.getString("info"));
+		}
+		
+		rs.close();
+		ps.close();
+		con.close();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+
+	return bean;
+	}
+
+//5.회원 한명의 비밀번호를 조회하여 리턴하는 메서드
+	public String getPass(String id) {
+		String pass="";
+		try {
+			getCon();
+			String sql = "select pass1 from member where id=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, id);
+			
+			rs=ps.executeQuery();
+			
+			if(rs.next()) {
+				pass=rs.getString(1);
+			}
+			
+			ps.close();
+			rs.close();
+			con.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return pass;
+	}
+	
+	//6. 테이블에 한명의 회원 정보를 업데이트하는 메서드
+	public void UpdateMember(MemberBean bean) {
+		
+		try {
+			getCon();
+			
+			String sql = "update member set email=?, tel=?, hobby=?, job=?, age=?, info=? where id=?";
+			ps=con.prepareStatement(sql);
+			
+			ps.setString(1, bean.getEmail());
+			ps.setString(2, bean.getTel());
+			ps.setString(3, bean.getHobby());
+			ps.setString(4,  bean.getJob());
+			ps.setString(5, bean.getAge());
+			ps.setString(6, bean.getInfo());
+			ps.setString(7, bean.getId());
+			
+			ps.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -123,6 +123,7 @@
 				<td colspan="2" class="end">
 					<input type="submit" value="가입">
 					<input type="reset" value="취소">
+					<button type=" button" onclick="location.href='A04MemberList.jsp'">회원전체보기</button>
 				</td>
 			</tr>
 		</tfoot>
