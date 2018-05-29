@@ -193,5 +193,28 @@ public MemberBean selectMember(String id) {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+	}//6.end
+
+	//7.테이블에 한명의 회원 정보를 삭제하는 메서드
+	public void deleteMember(String id) {
+		
+		try {
+				getCon();
+				String sql = "delete from member where id=?";
+				ps = con.prepareStatement(sql);
+				
+				// ? 셋팅 (쿼리 구조 완성)
+				ps.setString(1, id);
+				
+				ps.executeUpdate();
+				
+				ps.close();
+				rs.close();
+				con.close();
+				
+		}catch(Exception  e) {
+			e.printStackTrace();
+		}
 	}
+	
 }

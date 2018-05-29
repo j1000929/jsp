@@ -93,7 +93,7 @@
 				<button type="button" onclick="location.href='A04MemberList.jsp'">전체 보기</button>
 				<button type="button" onclick="location.href='A01MemberJoin.jsp'">회원정보 입력</button>
 				<button type="button" onclick="location.href='A06MemberUpdateForm.jsp?id=<%=bean.getId()%>'">회원정보 수정</button>
-				<button >회원정보 삭제</button>
+				<button onclick="location.href='A08MemberDeleteForm.jsp?id=<%=bean.getId() %>'" >회원정보 삭제</button>
 			</td>
 		</tfoot>
 	</table>

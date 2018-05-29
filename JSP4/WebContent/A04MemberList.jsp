@@ -12,9 +12,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="common/default.css" />
 <style type="text/css">
 	body {
-		font-family: "돋움", "굴림";
+	
 	}
 	
 	h1 {
@@ -24,10 +25,14 @@
 	table {
 		width: 800px;
 		margin: 0 auto;
+		/*border: 1px solid black;*/
+		background-color:#ccc;
+	   padding: 5px;
 	}
 	
 	table, tr, th, td {
-		border: 1px solid black;
+		border-collapse: separate;
+		;
 	}
 	
 	tr {
@@ -76,7 +81,7 @@
 						MemberBean mbean = vec.get(i);	
 			%>
 			<tr>
-				<td><a href="A06MemberUpdateForm.jsp?id=<%=mbean.getId() %>"><%=mbean.getId() %></a></td>
+				<td><a href="A05_MemberInfo.jsp?id=<%=mbean.getId() %>"><%=mbean.getId() %></a></td>
 				<td><%=mbean.getEmail()%></td>
 				<td><%=mbean.getTel() %></td>
 				<td><%=mbean.getHobby() %></td>

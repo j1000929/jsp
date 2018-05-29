@@ -1,0 +1,25 @@
+@import url("default.css");
+
+body{font-size:15px;color:#464646;line-height:1.8;}
+
+.wrap{width:1200px;margin:0 auto;}
+h2{font-size:28px;color:#333;font-weight:400;text-align:center;}
+h2 span{font-size:35px;}
+p{color:#666;text-align:center;}
+h3{text-align:center;font-size:35px;font-weight:400;}
+
+#container{background:#ebebeb;}
+#container .login{width:517px;margin:0 auto;}
+#container .con_tit{margin-bottom:80px;}
+#container .login .login_form{position:relative;}
+#container .login .login_form label{display:inline-block;}
+#container .login .login_form .txt{display:inline-block;margin-bottom:20px;padding:0 5px;width:315px;height:38px;border:1px solid #fff;}
+#container .login .login_form .pw{}
+#container .login .login_form .btn{position:absolute;right:0;top:0;width:174px;height:100px;background:#666;color:#fff;border:0;}
+#container .login .find_id{padding:10px;background:url(../images/login/line_bg.png)left top repeat;}
+
+#container .login .find_id div{padding:20px;background:#ebebeb;text-align:center;}
+#container .login .find_id h3{display:inline-block;font-size:15px;color:#333;font-weight:400;}
+#container .login .find_id a{display:inline-block;margin-left:35px;padding:3px 20px;text-decoration:none;color:#fff;background:#666;}
+
+

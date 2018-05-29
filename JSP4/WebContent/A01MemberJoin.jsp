@@ -5,18 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="common/default.css" />
 <style>
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 	body {
-		font-family: "돋움";
+		font-family:나눔고딕,NanumGothic,'Nanum Gothic',Nanumbarungothc,arial,verdana,sans-sefif;
+		line-height:1.6;
+		font-size:12px;
 	}
 	
 	table {
 		width: 500px;
 		margin: 0 auto;
+		/*border: 1px solid black;*/
+		background-color:#ccc;
+	   padding: 5px;
 	}
 	
 	table, tr, th, td {
-		border: 1px solid black;
+		border-collapse:collapse;
 	}
 	
 	.mainName {
@@ -35,7 +42,11 @@
 	}
 	
 	.control {
-		width: 350px;
+		width: 240px;
+		height:25px;
+		 margin: 2px;
+		 border :1px solid #ddd;
+		
 	}
 	
 	#selectcontrol {
@@ -44,6 +55,7 @@
 </style>
 </head>
 <body>
+<button type=" button" onclick="location.href='A04MemberList.jsp'">회원전체보기</button>
 <form action="A03MemberJoinProc.jsp" method="post">
 	<table>
 		<thead>
@@ -123,7 +135,7 @@
 				<td colspan="2" class="end">
 					<input type="submit" value="가입">
 					<input type="reset" value="취소">
-					<button type=" button" onclick="location.href='A04MemberList.jsp'">회원전체보기</button>
+				
 				</td>
 			</tr>
 		</tfoot>

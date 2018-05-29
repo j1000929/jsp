@@ -43,20 +43,19 @@ request.setCharacterEncoding("utf-8");
 		history.go(-1);
 	</script>
 <%
+		}else{
+			 //4. 오라클에 데이터 insert 
+			MemberDAO mdao = new MemberDAO();
+
+			//MemberDAO의 insertMember()를 이용하여 insert처리
+			mdao.insertMember(mbean);
+
+			//insert이후 회원 리스트를 보여주는 페이지로 이동
+			response.sendRedirect("A04MemberList.jsp");
+
 		}
 %>
 
-<!-- 4. 오라클에 데이터 insert -->
-<%
-	MemberDAO mdao = new MemberDAO();
-
-//MemberDAO의 insertMember()를 이용하여 insert처리
-mdao.insertMember(mbean);
-
-//insert이후 회원 리스트를 보여주는 페이지로 이동
-response.sendRedirect("A04MemberList.jsp");
-
-%>
 <h1>insert성공</h1>
 </body>
 </html>
